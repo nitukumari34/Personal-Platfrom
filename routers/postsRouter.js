@@ -3,7 +3,13 @@ const postsController = require('../controller/postsController');
 const requireUser = require('../middlewares/requireUser')
 
 
-router.get('/all', requireUser, postsController.getAllPostsController);
+// router.get('/all', requireUser, postsController.getAllPostsController);
+router.post('/', requireUser, postsController.createPostController);
+router.post('/like', requireUser, postsController.likeAndUnlikePost);
+router.put('/', requireUser, postsController.updatePostController);
+router.delete('/', requireUser, postsController.deletePost);
+
+
 
 
 

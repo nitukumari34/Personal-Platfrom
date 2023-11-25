@@ -8,7 +8,8 @@ const cors = require('cors')
 dotenv.config('./.env');
 
 const authRouter = require('./routers/authRouter');
-const postsRouter = require('./routers/postsRouter');
+const postsRouter = require('./routers/postsRouter')
+const userRouter = require('./routers/userRouter');
 
 
 
@@ -29,6 +30,8 @@ app.use(cors({
 app.use('/auth', authRouter);
 
 app.use("/posts", postsRouter);
+
+app.use("/user",userRouter);
 
 
 
