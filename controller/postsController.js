@@ -14,7 +14,10 @@ const { post } = require("../routers/userRouter");
 const createPostController = async (req, res) => {
   try {
     const { caption } = req.body;
-
+   
+    if(!caption){
+      return res.send(error(400,'caption is required'));
+    }
 
 
     const owner = req._id;
